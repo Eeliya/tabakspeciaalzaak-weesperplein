@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" id="html-lang">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Tabakspeciaalzaak in Weesperplein - Premium tobacco products and accessories. Visit us for quality and service.">
+    <meta name="keywords"
+          content="tabak store, tobacco shop, Weesperplein, Amsterdam, cigars, cigarettes, tobacco accessories, IQOS Iluma I, tabakspeciaalzaak, sigaretten, vapes, sigaren">
+    <meta name="author" content="Tabakspeciaalzaak Weesperplein">
+    <meta name="robots" content="index, follow">
+    <title id="page-title">Tabakspeciaalzaak Weesperplein - Premium Tobacco Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.14"></script>
+    <style>
+        .font-roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-roboto min-h-screen flex flex-col">
+<!-- Language Switcher -->
+<div class="fixed top-4 right-4 z-10 flex border rounded-md border-gray-600 overflow-clip bg-gray-800">
+    <button id="lang-en" onclick="switchLanguage('en')"
+            class="px-3 py-1 bg-transparent text-white hover:bg-gray-900 focus:outline-none">EN
+    </button>
+    <button id="lang-nl" onclick="switchLanguage('nl')"
+            class="px-3 py-1 bg-transparent text-white hover:bg-gray-900 focus:outline-none">NL
+    </button>
+</div>
+
+<main class="flex-grow">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white text-center py-6">
+        <h1 class="text-3xl font-bold" id="header-title">Tabakspeciaalzaak Weesperplein</h1>
+        <p class="mt-2" id="header-subtitle">Your trusted tobacco shop in Amsterdam</p>
+    </header>
+
+    <!-- Section 1: Images -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-semibold text-center mb-8" id="section1-title">Our Store</h2>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <img src="assets/shop-outside.jpg" alt="Tobacco shop exterior"
+                     class="w-full md:w-1/2 h-64 object-cover rounded-lg shadow-md" id="img1-alt">
+                <img src="assets/shop-inside.jpg" alt="Tobacco shop interior"
+                     class="w-full md:w-1/2 h-64 object-cover rounded-lg shadow-md" id="img2-alt">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: About the Business -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 font-semibold">
+            <p class="text-gray-700 max-w-3xl mx-auto text-center text-lg" id="about-text">
+                For IQOS Iluma I, cigarettes, vapes, cigars, Toto & lottery
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 3: Contact -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-semibold text-center mb-8" id="section3-title">Contact Us</h2>
+            <div class="max-w-lg mx-auto justify-center flex">
+                <div class="w-96 h-96 flex flex-col justify-center p-6 bg-white border border-gray-300 shadow-lg rounded-lg text-center">
+                    <p class="text-gray-700 text-base"><strong id="contact-address-label">Address:</strong></p>
+                    <p class="text-gray-700 text-base">Weesperplein 4, 1018 XA Amsterdam, Netherlands</p>
+                    <p class="text-gray-700 text-base"><strong id="contact-phone-label">Phone:</strong></p>
+                    <p class="text-gray-700 text-base">+31 20 123 4567</p>
+                    <p class="text-gray-700 text-base"><strong id="contact-email-label">Email:</strong></p>
+                    <p class="text-gray-700 text-base">info@tabakweesperplein.nl</p>
+                    <p class="text-gray-700 text-base"><strong id="contact-hours-label">Opening Hours:</strong></p>
+                    <p class="text-gray-700 text-base" id="hours-mf">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p class="text-gray-700 text-base" id="hours-sat">Saturday: 10:00 AM - 5:00 PM</p>
+                    <p class="text-gray-700 text-base" id="hours-sun">Sunday: Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-6">
+    <p id="footer-text">© 2025 Tabakspeciaalzaak Weesperplein. All rights reserved.</p>
+</footer>
+
+<script>
+    const translations = {
+        en: {
+            htmlLang: "en",
+            pageTitle: "Tabakspeciaalzaak Weesperplein - Premium Tobacco Shop",
+            headerTitle: "Tabakspeciaalzaak Weesperplein",
+            headerSubtitle: "Your trusted tobacco shop in Amsterdam",
+            section1Title: "Our Store",
+            img1Alt: "Tobacco shop exterior",
+            img2Alt: "Tobacco shop interior",
+            aboutText: "For IQOS Iluma I, cigarettes, vapes, cigars, Toto & lottery",
+            section3Title: "Contact Us",
+            contactAddressLabel: "Address:",
+            contactPhoneLabel: "Phone:",
+            contactEmailLabel: "Email:",
+            contactHoursLabel: "Opening Hours:",
+            hoursMf: "Monday - Friday: 9:00 AM - 6:00 PM",
+            hoursSat: "Saturday: 10:00 AM - 5:00 PM",
+            hoursSun: "Sunday: Closed",
+            footerText: "© 2025 Tabakspeciaalzaak Weesperplein. All rights reserved."
+        },
+        nl: {
+            htmlLang: "nl",
+            pageTitle: "Tabakspeciaalzaak Weesperplein - Premium Tabakswinkel",
+            headerTitle: "Tabakspeciaalzaak Weesperplein",
+            headerSubtitle: "Uw vertrouwde tabakswinkel in Amsterdam",
+            section1Title: "Onze Winkel",
+            img1Alt: "Tabakwinkel exterieur",
+            img2Alt: "Tabakspeciaalzaak interieur",
+            aboutText: "Voor IQOS Iluma I, sigaretten, vapes, sigaren, Toto & loterij",
+            section3Title: "Contact",
+            contactAddressLabel: "Adres:",
+            contactPhoneLabel: "Telefoon:",
+            contactEmailLabel: "E-mail:",
+            contactHoursLabel: "Openingstijden:",
+            hoursMf: "Maandag - Vrijdag: 9:00 - 18:00",
+            hoursSat: "Zaterdag: 10:00 - 17:00",
+            hoursSun: "Zondag: Gesloten",
+            footerText: "© 2025 Tabakspeciaalzaak Weesperplein. Alle rechten voorbehouden."
+        }
+    };
+
+    function updateButtonStyles(lang) {
+        const enButton = document.getElementById("lang-en");
+        const nlButton = document.getElementById("lang-nl");
+        if (lang === 'en') {
+            enButton.classList.add('!bg-gray-600');
+            nlButton.classList.remove('!bg-gray-600');
+        } else {
+            nlButton.classList.add('!bg-gray-600');
+            enButton.classList.remove('!bg-gray-600');
+        }
+    }
+
+    function switchLanguage(lang) {
+        const t = translations[lang];
+        document.getElementById("html-lang").setAttribute("lang", t.htmlLang);
+        document.getElementById("page-title").textContent = t.pageTitle;
+        document.getElementById("header-title").textContent = t.headerTitle;
+        document.getElementById("header-subtitle").textContent = t.headerSubtitle;
+        document.getElementById("section1-title").textContent = t.section1Title;
+        document.getElementById("img1-alt").setAttribute("alt", t.img1Alt);
+        document.getElementById("img2-alt").setAttribute("alt", t.img2Alt);
+        document.getElementById("about-text").textContent = t.aboutText;
+        document.getElementById("section3-title").textContent = t.section3Title;
+        document.getElementById("contact-address-label").textContent = t.contactAddressLabel;
+        document.getElementById("contact-phone-label").textContent = t.contactPhoneLabel;
+        document.getElementById("contact-email-label").textContent = t.contactEmailLabel;
+        document.getElementById("contact-hours-label").textContent = t.contactHoursLabel;
+        document.getElementById("hours-mf").textContent = t.hoursMf;
+        document.getElementById("hours-sat").textContent = t.hoursSat;
+        document.getElementById("hours-sun").textContent = t.hoursSun;
+        document.getElementById("footer-text").textContent = t.footerText;
+        updateButtonStyles(lang);
+        history.pushState(null, '', `?lang=${lang}`);
+    }
+
+    // Initialize language based on URL parameter or default to English
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang') === 'nl' ? 'nl' : 'en';
+    switchLanguage(lang);
+</script>
+</body>
+</html>
