@@ -64,13 +64,13 @@
             <h2 class="text-2xl font-semibold text-center mb-8" id="section3-title">Contact Us</h2>
             <div class="max-w-lg mx-auto justify-center flex">
                 <div class="w-96 h-96 flex flex-col justify-center p-6 bg-white border border-gray-300 shadow-lg rounded-lg text-center">
-                    <p class="text-gray-700 text-base"><strong id="contact-address-label">Address:</strong></p>
+                    <p class="text-gray-700 text-base"><strong id="contact-address-label">Address</strong></p>
                     <p class="text-gray-700 text-base">Sarphatistraat 65, 1018 EX Amsterdam, Netherlands</p>
-                    <p class="text-gray-700 text-base"><strong id="contact-phone-label">Phone:</strong></p>
+                    <p class="text-gray-700 text-base mt-4"><strong id="contact-phone-label">Phone</strong></p>
                     <p class="text-gray-700 text-base">+31 20 622 37 12</p>
-<!--                    <p class="text-gray-700 text-base"><strong id="contact-email-label">Email:</strong></p>-->
+<!--                    <p class="text-gray-700 text-base mt-4"><strong id="contact-email-label">Email:</strong></p>-->
 <!--                    <p class="text-gray-700 text-base">info@tabakweesperplein.nl</p>-->
-                    <p class="text-gray-700 text-base"><strong id="contact-hours-label">Opening Hours:</strong></p>
+                    <p class="text-gray-700 text-base mt-4"><strong id="contact-hours-label">Opening Hours</strong></p>
                     <p class="text-gray-700 text-base" id="hours-mf">Monday - Friday: 9:00 AM - 6:00 PM</p>
                     <p class="text-gray-700 text-base" id="hours-sat">Saturday: 10:00 AM - 5:00 PM</p>
                     <p class="text-gray-700 text-base" id="hours-sun">Sunday: Closed</p>
@@ -97,10 +97,10 @@
             img2Alt: "Tobacco shop interior",
             aboutText: "For IQOS Iluma I, cigarettes, vapes, cigars, Toto & lottery",
             section3Title: "Contact Us",
-            contactAddressLabel: "Address:",
-            contactPhoneLabel: "Phone:",
-            contactEmailLabel: "Email:",
-            contactHoursLabel: "Opening Hours:",
+            contactAddressLabel: "Address",
+            contactPhoneLabel: "Phone",
+            contactEmailLabel: "Email",
+            contactHoursLabel: "Opening Hours",
             hoursMf: "Monday - Friday: 9:00 AM - 6:00 PM",
             hoursSat: "Saturday: 10:00 AM - 5:00 PM",
             hoursSun: "Sunday: Closed",
@@ -116,10 +116,10 @@
             img2Alt: "Tabakspeciaalzaak interieur",
             aboutText: "Voor IQOS Iluma I, sigaretten, vapes, sigaren, Toto & loterij",
             section3Title: "Contact",
-            contactAddressLabel: "Adres:",
-            contactPhoneLabel: "Telefoon:",
-            contactEmailLabel: "E-mail:",
-            contactHoursLabel: "Openingstijden:",
+            contactAddressLabel: "Adres",
+            contactPhoneLabel: "Telefoon",
+            contactEmailLabel: "E-mail",
+            contactHoursLabel: "Openingstijden",
             hoursMf: "Maandag - Vrijdag: 9:00 - 18:00",
             hoursSat: "Zaterdag: 10:00 - 17:00",
             hoursSun: "Zondag: Gesloten",
@@ -141,23 +141,38 @@
 
     function switchLanguage(lang) {
         const t = translations[lang];
-        document.getElementById("html-lang").setAttribute("lang", t.htmlLang);
-        document.getElementById("page-title").textContent = t.pageTitle;
-        document.getElementById("header-title").textContent = t.headerTitle;
-        document.getElementById("header-subtitle").textContent = t.headerSubtitle;
-        document.getElementById("section1-title").textContent = t.section1Title;
-        document.getElementById("img1-alt").setAttribute("alt", t.img1Alt);
-        document.getElementById("img2-alt").setAttribute("alt", t.img2Alt);
-        document.getElementById("about-text").textContent = t.aboutText;
-        document.getElementById("section3-title").textContent = t.section3Title;
-        document.getElementById("contact-address-label").textContent = t.contactAddressLabel;
-        document.getElementById("contact-phone-label").textContent = t.contactPhoneLabel;
-        document.getElementById("contact-email-label").textContent = t.contactEmailLabel;
-        document.getElementById("contact-hours-label").textContent = t.contactHoursLabel;
-        document.getElementById("hours-mf").textContent = t.hoursMf;
-        document.getElementById("hours-sat").textContent = t.hoursSat;
-        document.getElementById("hours-sun").textContent = t.hoursSun;
-        document.getElementById("footer-text").textContent = t.footerText;
+
+        const elements = [
+            { id: "html-lang", attr: "lang", value: t.htmlLang },
+            { id: "page-title", prop: "textContent", value: t.pageTitle },
+            { id: "header-title", prop: "textContent", value: t.headerTitle },
+            { id: "header-subtitle", prop: "textContent", value: t.headerSubtitle },
+            { id: "section1-title", prop: "textContent", value: t.section1Title },
+            { id: "img1-alt", attr: "alt", value: t.img1Alt },
+            { id: "img2-alt", attr: "alt", value: t.img2Alt },
+            { id: "about-text", prop: "textContent", value: t.aboutText },
+            { id: "section3-title", prop: "textContent", value: t.section3Title },
+            { id: "contact-address-label", prop: "textContent", value: t.contactAddressLabel },
+            { id: "contact-phone-label", prop: "textContent", value: t.contactPhoneLabel },
+            { id: "contact-email-label", prop: "textContent", value: t.contactEmailLabel },
+            { id: "contact-hours-label", prop: "textContent", value: t.contactHoursLabel },
+            { id: "hours-mf", prop: "textContent", value: t.hoursMf },
+            { id: "hours-sat", prop: "textContent", value: t.hoursSat },
+            { id: "hours-sun", prop: "textContent", value: t.hoursSun },
+            { id: "footer-text", prop: "textContent", value: t.footerText }
+        ];
+
+        elements.forEach(({ id, attr, prop, value }) => {
+            const element = document.getElementById(id);
+            if (element) {
+                if (attr) {
+                    element.setAttribute(attr, value);
+                } else if (prop) {
+                    element[prop] = value;
+                }
+            }
+        });
+
         updateButtonStyles(lang);
         history.pushState(null, '', `?lang=${lang}`);
     }
