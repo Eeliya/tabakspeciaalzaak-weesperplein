@@ -76,30 +76,37 @@ header p {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
-    margin: 2rem 0;
+    margin: 2rem 0 1.5rem;
 }
 
 .image-grid {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    height: 33vh;
+    min-height: 20vh;
 }
 
-.image-grid img {
+.image-grid img, .image-grid > div {
     width: 100%;
     object-fit: cover;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     aspect-ratio: 1/1;
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.image-grid > div {
+    background-color: #eee;
 }
 
 @media (min-width: 768px) {
     .image-grid {
         flex-direction: row;
     }
-    .image-grid img {
-        width: 50%;
+
+    .image-grid img, .image-grid > div {
+        flex-basis: 50%;
     }
 }
 
